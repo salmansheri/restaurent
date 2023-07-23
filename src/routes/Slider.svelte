@@ -32,19 +32,19 @@
 
 	let currentSlide = 0;
 
-	// onMount(() => {
-	//     const interval = setInterval(() => {
+	onMount(() => {
+	    const interval = setInterval(() => {
 
-	//         currentSlide++;
+	        currentSlide++;
 
-	//         if(currentSlide === data.length) {
-	//             currentSlide = 0;
-	//         }
+	        if(currentSlide === data.length) {
+	            currentSlide = 0;
+	        }
 
-	//     }, 5000)
+	    }, 5000)
 
-	//     return () => clearInterval(interval)
-	// } )
+	    return () => clearInterval(interval)
+	} )
 </script>
 
 <div class="flex flex-col md:flex-row h-[calc(100vh-6rem)]">
