@@ -1,14 +1,14 @@
 <script lang="ts">
-	import Open from '../lib/images/open.png';
 	import Close from '../lib/images/close.png';
-	import { page } from '$app/stores';
+	import Open from '../lib/images/open.png';
+	import CartIcon from './CartIcon.svelte';
 
 	type LinksType = {
 		id: number;
 		title: string;
 		href: string;
 	};
-	let pathname = $page.url.pathname;
+	
 	let open = false;
 	let links: Array<LinksType> = [
 		{
@@ -33,7 +33,7 @@
 		}
 	];
 
-	console.log(pathname);
+	let user = false;
 </script>
 
 <section class="relative md:hidden">
@@ -48,11 +48,19 @@
 	{/if}
 	{#if open}
 		<div
-			class="absolute flex flex-col text-white right-0 bg-red-500 w-screen h-screen items-center justify-center space-y-3 transition-all"
+			class="absolute flex flex-col text-white right-0 bg-red-500 w-screen z-50 h-[calc(100vh-6rem)] items-center justify-center space-y-3 transition-all"
 		>
 			{#each links as link}
 				<a class="text-3xl" href={link.href}>{link.title}</a>
 			{/each}
+
+			{#if !user}
+				<button class="text-3xl">Login</button>
+			{:else}
+				<a class="text-3xl" href="/sign-in">Orders</a>
+				<a class="text-3xl" href="/orders">Logout</a>
+			{/if}
+			<CartIcon />
 		</div>
 	{/if}
 </section>
