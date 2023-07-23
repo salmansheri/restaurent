@@ -8,7 +8,7 @@
 		title: string;
 		href: string;
 	};
-	
+
 	let open = false;
 	let links: Array<LinksType> = [
 		{
