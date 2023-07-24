@@ -1,7 +1,5 @@
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = ({ params }: { params: { category: string } }) => {
-	return {
-		category: params.category
-	};
+	return params;
 };
