@@ -41,6 +41,7 @@
 	"type": "module",
 	"dependencies": {
 		"lucide-svelte": "^0.263.0",
+		"svelte-countdown": "^1.1.2",
 		"tailwind-merge": "^1.14.0"
 	}
 }

@@ -11,6 +11,9 @@ import Product10 from '$lib/images/temporary/p10.png';
 import Product11 from '$lib/images/temporary/p11.png';
 import Product12 from '$lib/images/temporary/p12.png';
 import Product13 from '$lib/images/temporary/m1.png';
+import Menu1 from '$lib/images/temporary/m1.png';
+import Menu2 from '$lib/images/temporary/m2.png';
+import Menu3 from '$lib/images/temporary/m3.png';
 
 export type Product = {
 	id: number;
@@ -366,38 +369,38 @@ export const singleProduct: Product = {
 	]
 };
 
-type Menu = {
+export type Menu = {
 	id: number;
 	slug: string;
 	title: string;
 	desc?: string;
 	img?: string;
 	color: string;
-}[];
+};
 
-export const menu: Menu = [
+export const menu: Menu[] = [
 	{
 		id: 1,
-		slug: 'pastas',
+		slug: '/menu/pastas',
 		title: 'Italian Pastas',
 		desc: 'Savor the taste of perfection with our exquisite Italian handmade pasta menu.',
-		img: '/temporary/m1.png',
+		img: Menu1,
 		color: 'white'
 	},
 	{
 		id: 2,
-		slug: 'burgers',
+		slug: '/menu/burgers',
 		title: 'Juicy Burgers',
 		desc: 'Burger Bliss: Juicy patties, bold flavors, and gourmet toppings galore.',
-		img: '/temporary/m2.png',
+		img: Menu2,
 		color: 'black'
 	},
 	{
 		id: 3,
-		slug: 'pizzas',
+		slug: '/menu/pizzas',
 		title: 'Cheesy Pizzas',
 		desc: 'Pizza Paradise: Irresistible slices, mouthwatering toppings, and cheesy perfection.',
-		img: '/temporary/m3.png',
+		img: Menu3,
 		color: 'white'
 	}
 ];
