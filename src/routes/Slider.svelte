@@ -4,7 +4,6 @@
 	import SliderImage1 from '../lib/images/slide1.png';
 	import SliderImage2 from '../lib/images/slide2.png';
 	import SliderImage3 from '../lib/images/slide3.jpg';
-	import { ArrowLeft, ArrowRight } from 'lucide-svelte';
 
 	type DataType = {
 		id: number;
@@ -33,18 +32,16 @@
 	let currentSlide = 0;
 
 	onMount(() => {
-	    const interval = setInterval(() => {
+		const interval = setInterval(() => {
+			currentSlide++;
 
-	        currentSlide++;
+			if (currentSlide === data.length) {
+				currentSlide = 0;
+			}
+		}, 5000);
 
-	        if(currentSlide === data.length) {
-	            currentSlide = 0;
-	        }
-
-	    }, 5000)
-
-	    return () => clearInterval(interval)
-	} )
+		return () => clearInterval(interval);
+	});
 </script>
 
 <div class="flex flex-col md:flex-row h-[calc(100vh-6rem)]">
