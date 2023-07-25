@@ -14,6 +14,8 @@
 	<p>{item.desc}</p>
 	<button
 		class={twMerge(`hidden lg:block px-4 py-2 rounded-md hover:bg-opacity-80`)}
-		style="background-color: {color}; color: {text}">Explore</button
+		style="background-color: {color}; color: {text}"
 	>
+		Explore
+	</button>
 </div>

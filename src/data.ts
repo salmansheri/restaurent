@@ -15,13 +15,18 @@ import Menu1 from '$lib/images/temporary/m1.png';
 import Menu2 from '$lib/images/temporary/m2.png';
 import Menu3 from '$lib/images/temporary/m3.png';
 
+export type optionsType = {
+	title: string;
+	additionalPrice: number;
+};
+
 export type Product = {
 	id: number;
 	title: string;
 	desc?: string;
 	img?: string;
 	price: number;
-	options?: { title: string; additionalPrice: number }[];
+	options: optionsType[];
 };
 
 type Products = Product[];
