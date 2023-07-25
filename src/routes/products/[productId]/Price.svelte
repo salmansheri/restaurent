@@ -40,7 +40,7 @@
 					size === option.title.toLowerCase()
 						? 'bg-red-500 text-white'
 						: 'bg-fuchsia-100 border-red-500'
-				)}>{option.title}</button
+				)}>{option.title}{id}</button
 			>
 		{/each}
 	</div>
