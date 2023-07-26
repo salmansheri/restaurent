@@ -6,7 +6,7 @@
 	export let secondary: boolean = false;
 	export let disabled: boolean = false;
 
-	import Button from '../../../components/Button.svelte';
+	
 </script>
 
 <button

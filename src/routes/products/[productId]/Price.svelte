@@ -1,8 +1,8 @@
 <script lang="ts">
+	import { ArrowLeft, ArrowRight } from 'lucide-svelte';
 	import { twMerge } from 'tailwind-merge';
 	import type { optionsType } from '../../../data';
 	import Buttoni from '../../menu/[category]/Buttoni.svelte';
-	import { ArrowLeft, ArrowRight } from 'lucide-svelte';
 
 	export let item: number;
 	export let id: number;
@@ -11,6 +11,8 @@
 
 	let totalPrice = item;
 	let selectedOption = 0;
+
+	console.log(selectedOption);
 
 	const incrementQuantity = () => {
 		quantity = quantity + 1;
@@ -25,16 +27,29 @@
 	};
 
 	let size = 'small';
+
+	console.log(options[selectedOption].additionalPrice);
+
+	$: absolutePrice = totalPrice + options[selectedOption].additionalPrice;
+
+	const onClick = (title: string, price: number) => {
+		size = title.toLowerCase();
+		selectedOption = price;
+	};
+
+	const handleCart = () => {
+		console.log({absolutePrice, quantity})
+	}
 </script>
 
 <div class="flex flex-col space-y-3">
-	<h2 class="font-semibold text-lg">${item * options[selectedOption].additionalPrice}</h2>
+	<h2 class="font-semibold text-lg">${absolutePrice}</h2>
 	<!-- options container  -->
 	<div class="flex flex-row space-x-2">
 		<!-- @ts-ignore  -->
-		{#each options as option}
+		{#each options as option, i}
 			<button
-				on:click={() => (size = option.title.toLowerCase())}
+				on:click={() => onClick(option.title, i)}
 				class={twMerge(
 					'border  h-8 w-20 inline-flex items-center justify-center rounded-md transition-all duration-500 ease-linear',
 					size === option.title.toLowerCase()
@@ -63,6 +78,8 @@
 			</div>
 		</div>
 		<!-- Cart Button  -->
-		<Buttoni>Add to Cart</Buttoni>
+		<Buttoni
+			onClick={handleCart}
+		>Add to Cart</Buttoni>
 	</div>
 </div>

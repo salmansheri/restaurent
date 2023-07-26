@@ -26,7 +26,7 @@
 		}
 	];
 
-	let user = true;
+	let user = false;
 </script>
 
 <div class="hidden md:flex items-center space-x-10">

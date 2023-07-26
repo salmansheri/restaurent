@@ -4,6 +4,7 @@
 	import Header from '../components/Header.svelte';
 	import Notification from '../components/Notification.svelte';
 	import './styles.css';
+	
 </script>
 
 <svelte:head>
@@ -13,6 +14,7 @@
 </svelte:head>
 
 <div class="app">
+	
 	<Notification />
 	<Header />
 	<main>
